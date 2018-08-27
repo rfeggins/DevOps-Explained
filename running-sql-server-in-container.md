@@ -7,6 +7,8 @@ SQL Server 2017 now runs on Linux. It’s the same SQL Server database engine, w
 
 In this blog, we will walk through the steps to pull and run the SQL Server 2017 using a docker container image. This image, mssql-server-linux, consists of SQL Server running on Linux based on Ubuntu 16.04 and can be used with the Docker Engine 1.8+ on Linux or on Docker for Mac/Windows.
 
+With containers you can take advantage of the Container platform along with using CI/CD for both the application code but also for the run-time environment.
+
 Here is a quick summary of what we will cover:
 - Pulling the docker image for SQL Server from Docker github
 - Running SQL Server instance in Docker
@@ -29,7 +31,7 @@ Here are some additional referencesw
 3. [MS SQL Server Environment Variables](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-environment-variables?view=sql-server-2017)
 4. [Configuring SQL Server container for Production](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-docker?view=sql-server-2017)
 
-## Pull SQL Server container
+## Step 1 - Pulling SQL Server container
 The official docker images for Microsoft SQL Server that can run on Linux are available here, the [mssql-server-linux Docker hub page.](https://hub.docker.com/r/microsoft/mssql-server-linux/tags/)
 For this lab will be using the SQL Server developer edition. The process for running production editions for SQL Server 2017 in containers is slightly different. For more information, see Run production container images.
 1.	Pull SQL Server image (On some system sudo might not be required.)
@@ -44,7 +46,8 @@ For this lab will be using the SQL Server developer edition. The process for run
 >
 > sudo docker images
 >
-## Running SQL Server instance in Docker
+
+## Step 2 - Running SQL Server instance in Docker
 
 4.	To run the container locally using Docker, you can use the following command from a bash shell (Linux/macOS)
 >
@@ -62,17 +65,24 @@ https://github.com/Microsoft/mssql-docker/issues/114
 >
 > sudo docker ps -a
 
-    If the STATUS column shows a status of Up, then SQL Server is running in the container and listening on the port specified in the PORTS column.
-
-    If the STATUS column for your SQL Server container shows Exited, then you will need to do some troubleshooting.
 
 6. In my case the container running SQL-Server didn't start properly so I also had to check the error logs by executing the [docker logs command.](https://docs.docker.com/engine/reference/commandline/logs/)
 >
 > sudo docker logs --details <container-id>
 >
 
-## Connecting to SQL Server
+If the STATUS column shows a status of Up, then SQL Server is running in the container and listening on the port specified in the PORTS column.
+
+If the STATUS column for your SQL Server container shows Exited, then you will need to do some troubleshooting and retry again.
+
+## Step 3 - Connecting to SQL Server
 
 The following steps use the SQL Server command-line tool, sqlcmd, inside the container to connect to SQL Server.
 3.	Use the docker exec -it command to start an interactive bash shell inside your running container.
 4.	In the following example sql1 is name specified by the --name parameter when you created the container.
+
+   > sudo docker exec -it sql1 /opt/mssql-tools/bin/sqlcmd \
+   >
+   >  -S localhost -U SA -P '<YourStrong!Passw0rd>' \
+   >
+   >  -Q 'ALTER LOGIN SA WITH PASSWORD="<YourNewStrong!Passw0rd>"'
