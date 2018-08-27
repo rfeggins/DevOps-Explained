@@ -7,13 +7,27 @@ SQL Server 2017 now runs on Linux. It’s the same SQL Server database engine, w
 
 In this blog, we will walk through the steps to pull and run the SQL Server 2017 using a docker container image. This image, mssql-server-linux, consists of SQL Server running on Linux based on Ubuntu 16.04 and can be used with the Docker Engine 1.8+ on Linux or on Docker for Mac/Windows.
 
-We will then add this container to a Kubernetes cluster running on the IBM Container Service where we will then connect with sqlcmd to create your first database and run queries.
-Prerequisites.
+Here is a quick summary of what we will cover:
+- Pulling the docker image for SQL Server from Docker github
+- Creating the SQL Server instance
+- Connnecting to the SQL instance
+- Creating our first database
+
+In a subsequent blog, we will then add this container to a Kubernetes cluster running on the IBM Container Service where we will then connect with sqlcmd to create your first database and run queries.
+
+### Prerequisites
 
 Here is the list of the following prerequisites required to complete this tutorial
 -	Minimum of 4 GB of disk space
 - Minimum of 4 GB of RAM
 -	Docker Engine 1.8+ or [Docker for Mac/Windows](https://docs.docker.com/install/)
+
+### References
+Here are some additional referencesw
+1. [Introduction to SQL Server on SUSE Linux Enterprise Server](https://suse.lookbookhq.com/sql-server-on-suse-linux/introduction-webinar?campaign_description=FY18%20May%20Global%20Demand%20Generation%20Advertising%20online%20SEMPPC%20Digital%20Transformation&campaign_id=GSDGNIT32475&gclid=EAIaIQobChMI8OD-78qN3QIVl4jICh1p5Ad6EAAYASAAEgJ_qPD_BwE)
+2. [Quickstart: Run the SQL Server 2017 container image with Docker](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017)
+3. [MS SQL Server Environment Variables](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-environment-variables?view=sql-server-2017)
+4. [Configuring SQL Server container for Production](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-docker?view=sql-server-2017)
 
 ## Run SQL Server container image locally
 The official docker images for Microsoft SQL Server that can run on Linux are available here, the [mssql-server-linux Docker hub page.](https://hub.docker.com/r/microsoft/mssql-server-linux/tags/)
