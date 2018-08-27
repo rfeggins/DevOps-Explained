@@ -78,12 +78,12 @@ If the STATUS column for your SQL Server container shows Exited, then you will n
 ## Step 3 - Connecting to SQL Server
 
 The following steps use the SQL Server command-line tool, sqlcmd, inside the container to connect to SQL Server.
+
 7.	Use the docker exec -it command to start an interactive bash shell inside your running container.
    > sudo docker exec -it sql1 "bash"
 
-  Using the docker exec -it command to start an interactive bash shell inside your running container.
+  Using the docker exec -it command to start an interactive bash shell inside your running container. You can use standard commands such as "ls", "cd". "pwd" to name a few.
 
-  You can use standard commands such as "ls", "cd". "pwd" to name a few.
 
 8. Once you have access to the bash shell for your MS Server container, change to the sqlcmd directory as Sqlcmd is not in the path by default.
   > cd /opt/mssql-tools/bin/
