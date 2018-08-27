@@ -110,12 +110,12 @@ The following steps uses the * sqlcmd * and assume that you already have the SQL
 4. Next create a new table, called "Inventory", and insert two new rows.
 
 
-
 5. To exit the interactive command-prompt in your container, type exit. Your container continues to run after you exit the interactive bash shell.
 
 
 
 ## Summary
+
 In this tutorial we covered walked through
 - Pulling the docker image for SQL Server from Docker github
 - Running SQL Server instance in Docker
