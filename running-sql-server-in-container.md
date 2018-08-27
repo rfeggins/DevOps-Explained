@@ -79,10 +79,81 @@ If the STATUS column for your SQL Server container shows Exited, then you will n
 
 The following steps use the SQL Server command-line tool, sqlcmd, inside the container to connect to SQL Server.
 3.	Use the docker exec -it command to start an interactive bash shell inside your running container.
-4.	In the following example sql1 is name specified by the --name parameter when you created the container.
+   > sudo docker exec -it sql1 "bash"
 
-   > sudo docker exec -it sql1 /opt/mssql-tools/bin/sqlcmd \
-   >
-   >  -S localhost -U SA -P '<YourStrong!Passw0rd>' \
-   >
-   >  -Q 'ALTER LOGIN SA WITH PASSWORD="<YourNewStrong!Passw0rd>"'
+  Using the docker exec -it command to start an interactive bash shell inside your running container.
+
+  You can use standard commands such as "ls", "cd". "pwd" to name a few.
+
+
+   ## Step 4 - Create a test data
+   The following steps create a new database named **TestDB.**
+   1.	From the sqlcmd command prompt, paste the following Transact-SQL command to create a test database:
+   SQL Copy
+   CREATE DATABASE TestDB
+   2.	On the next line, write a query to return the name of all of the databases on your server:
+   SQL Copy
+   SELECT Name from sys.Databases
+   3.	The previous two commands were not executed immediately. You must type GO on a new line to execute the previous commands:
+   SQL Copy
+   GO
+   Insert data
+   Next create a new table, Inventory, and insert two new rows.
+   1.	From the sqlcmd command prompt, switch context to the new TestDB database:
+   SQL Copy
+   USE TestDB
+   2.	Create new table named Inventory:
+   SQL Copy
+   CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
+   3.	Insert data into the new table:
+   SQL Copy
+   INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+   4.	Type GO to execute the previous commands:
+   SQL Copy
+   GO
+   Select data
+   Now, run a query to return data from the Inventory table.
+   1.	From the sqlcmd command prompt, enter a query that returns rows from the Inventory table where the quantity is greater than 152:
+   SQL Copy
+   SELECT * FROM Inventory WHERE quantity > 152;
+   2.	Execute the command:
+   SQL Copy
+   GO
+   Exit the sqlcmd command prompt
+   1.	To end your sqlcmd session, type QUIT:
+   SQL Copy
+   QUIT
+   2.	To exit the interactive command-prompt in your container, type exit. Your container continues to run after you exit the interactive bash shell.
+   Connect from outside the container
+   You can also connect to the SQL Server instance on your Docker machine from any external Linux, Windows, or macOS tool that supports SQL connections.
+   The following steps use sqlcmd outside of your container to connect to SQL Server running in the container. These steps assume that you already have the SQL Server command-line tools installed outside of your container. The same principals apply when using other tools, but the process of connecting is unique to each tool.
+   1.	Find the IP address for the machine that hosts your container. On Linux, use ifconfig or ip addr. On Windows, use ipconfig.
+   2.	Run sqlcmd specifying the IP address and the port mapped to port 1433 in your container. In this example, that is the same port, 1433, on the host machine. If you specified a different mapped port on the host machine, you would use it here.
+   bash Copy
+   sqlcmd -S 10.3.2.4,1433 -U SA -P '<YourNewStrong!Passw0rd>'
+   PowerShell Copy
+   sqlcmd -S 10.3.2.4,1433 -U SA -P "<YourNewStrong!Passw0rd>"
+   3.	Run Transact-SQL commands. When finished, type QUIT.
+   Other common tools to connect to SQL Server include:
+   •	Visual Studio Code
+   •	SQL Server Management Studio (SSMS) on Windows
+   •	SQL Server Operations Studio (Preview)
+   •	mssql-cli (Preview)
+   Remove your container
+   If you want to remove the SQL Server container used in this tutorial, run the following commands:
+   bash Copy
+   sudo docker stop sql1
+   sudo docker rm sql1
+   PowerShell Copy
+   docker stop sql1
+   docker rm sql1
+   Warning
+   Stopping and removing a container permanently deletes any SQL Server data in the container. If you need to preserve your data, create and copy a backup file out of the container or use a container data persistence technique.
+   Docker demo
+   After you have tried using the SQL Server container image for Docker, you might want to know how Docker is used to improve development and testing. The following video shows how Docker can be used in a continuous integration and deployment scenario.
+   Next steps
+   For a tutorial on how to restore database backup files into a container, see Restore a SQL Server database in a Linux Docker container. To explore other scenarios, such as running multiple containers, data persistence, and troubleshooting, see Configure SQL Server 2017 container images on Docker.
+   Also, check out the mssql-docker GitHub repository for resources, feedback, and known issues.
+   Note
+   The feedback system for this content will be changing soon. Old comments will not be carried over. If content within a comment thread is important to you, please save a copy. For more information on the upcoming change, we invite you to read our blog post.
+   229 comments
