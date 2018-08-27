@@ -9,7 +9,7 @@ In this blog, we will walk through the steps to pull and run the SQL Server 2017
 
 Here is a quick summary of what we will cover:
 - Pulling the docker image for SQL Server from Docker github
-- Creating the SQL Server instance
+- Running SQL Server instance in Docker
 - Connnecting to the SQL instance
 - Creating our first database
 
@@ -29,7 +29,7 @@ Here are some additional referencesw
 3. [MS SQL Server Environment Variables](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-environment-variables?view=sql-server-2017)
 4. [Configuring SQL Server container for Production](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-docker?view=sql-server-2017)
 
-## Run SQL Server container image locally
+## Pull SQL Server container
 The official docker images for Microsoft SQL Server that can run on Linux are available here, the [mssql-server-linux Docker hub page.](https://hub.docker.com/r/microsoft/mssql-server-linux/tags/)
 For this lab will be using the SQL Server developer edition. The process for running production editions for SQL Server 2017 in containers is slightly different. For more information, see Run production container images.
 1.	Pull SQL Server image (On some system sudo might not be required.)
@@ -44,6 +44,7 @@ For this lab will be using the SQL Server developer edition. The process for run
 >
 > sudo docker images
 >
+## Running SQL Server instance in Docker
 
 4.	To run the container locally using Docker, you can use the following command from a bash shell (Linux/macOS)
 >
@@ -65,9 +66,9 @@ https://github.com/Microsoft/mssql-docker/issues/114
 
     If the STATUS column for your SQL Server container shows Exited, then you will need to do some troubleshooting.
 
-6. In my case the container running SQL-Server didn't start properly so I also had to check the error logs by executing the docker logs command.
+6. In my case the container running SQL-Server didn't start properly so I also had to check the error logs by executing the [docker logs command.](https://docs.docker.com/engine/reference/commandline/logs/)
 >
->
+> sudo docker logs --details <container-id>
 >
 
 ## Connecting to SQL Server
