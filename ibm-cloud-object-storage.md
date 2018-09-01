@@ -12,8 +12,8 @@ Requires that you assign a resource group (default or one you create) to assign 
 
 
 ## References
-[Service](https://console.bluemix.net/catalog/services/cloud-object-storage)
-[Documentation](https://console.bluemix.net/docs/services/cloud-object-storage/about-cos.html#about-ibm-cloud-object-storage)
+- [Service](https://console.bluemix.net/catalog/services/cloud-object-storage)
+- [Documentation](https://console.bluemix.net/docs/services/cloud-object-storage/about-cos.html#about-ibm-cloud-object-storage)
 
 ## Features
 
