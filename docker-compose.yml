@@ -1,0 +1,11 @@
+version: '3'
+services:
+  mssql:
+     image: ericskang/unittestdb:latest
+     container_name: mssql
+     ports:
+       - "1433:1433"
+     environment:
+       SA_PASSWORD: "mysqlDevOps2017"
+       ACCEPT: "Y"
+       MSSQL_PID: Developer
