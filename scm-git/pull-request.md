@@ -8,6 +8,9 @@ the feature has been completed and it's open for discussion or modifications.
 >  Pull requests require two distinct branches. There needs to be a difference in the 
 >  code between the taken branch and source branch in order to create a pull request.
 
+<img src="images/typical-scm-workflow.png" alt="drawing" style="width:200px;"/>
+
+
 ## Prior to creating a pull request you must:
 1. Rebase your branch to ensure any any new pull requests have been merged so your branch is current
 2. Commit completed code in your feature branch. Note feature branch can have any number of commit
