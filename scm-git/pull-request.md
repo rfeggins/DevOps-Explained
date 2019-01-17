@@ -8,7 +8,10 @@ the feature has been completed and it's open for discussion or modifications.
 >  Pull requests require two distinct branches. There needs to be a difference in the 
 >  code between the taken branch and source branch in order to create a pull request.
 
-<img src="images/typical-scm-workflow.png" alt="drawing" style="width:200px;"/>
+
+
+<img src="images/git-repo.png" alt="drawing" style="width:200px;"/>
+
 
 
 ## Prior to creating a pull request you must:
@@ -17,6 +20,13 @@ the feature has been completed and it's open for discussion or modifications.
 3. Push commited changes to the remote branch and merge if necessary
 4. After rebasing, any conflicts that arise need to be resolved, and the code needs to be pushed back to the remote branch.
 5. Finally, it’s time to create a pull request.
+
+<img src="images/typical-scm-workflow.png" alt="drawing" style="width:200px;"/>
+
+### Common Branches
+**master branch:**  A pull request is created by  developer from the release branch to merge code to the master branch. Usually, the pull request is created during release time when the code is ready for deployment. The pull request is merged by the next-level person or the technical lead who created it.
+
+
 
 ## Writing a Good Commit Message
 
