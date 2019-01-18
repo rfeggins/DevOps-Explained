@@ -33,6 +33,7 @@ There are various operators supported by each shell. However for this discuss we
 - File Test Operators
 
 Here are a few
+
 | Operator      |	Description   |	Example |
 | ------------- | ------------- | ------- |
 | Operator |Description |	Example |
