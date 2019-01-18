@@ -101,4 +101,4 @@ The examples below assume a variable file holds an existing file name **"test"**
 | -w file |	Checks if file is writable; if yes, then the condition becomes true.	 | [ -w $file ] is true. |
 | -x file |	Checks if file is executable; if yes, then the condition becomes true. |	[ -x $file ] is true. |
 | -s file |	Checks if file has size greater than 0; if yes, then condition becomes true. |	[ -s $file ] is true. |
-| -e file	| Checks if file exists; is true even if file is a directory but exists. |	[ -e $file ] is true. |
+| -e file	| Checks if file exists; is true even if file is a directory but exists. |	[ -e $file ] is true          . |
