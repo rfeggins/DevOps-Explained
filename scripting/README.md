@@ -80,7 +80,7 @@ Show Examples
 
 | Operator |	Description	| Example |
 | ------------- | ------------- | ------- |
-| =	Checks if the value of two operands are equal or not; if yes, then the condition becomes true.	[ $a = $b ] is not true. |
+| =	| Checks if the value of two operands are equal or not; if yes, then the condition becomes true.	| [ $a = $b ] is not true. |
 | != |	Checks if the value of two operands are equal or not; if values are not equal then the condition becomes true.	| [ $a != $b ] is true. |
 | -z |	Checks if the given string operand size is zero; if it is zero length, then it returns true. |	[ -z $a ] is not true. |
 | -n	 | Checks if the given string operand size is non-zero; if it is nonzero length, then it returns true.	 | [ -n $a ] is not false. |
