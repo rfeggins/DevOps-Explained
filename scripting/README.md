@@ -46,7 +46,8 @@ Here are a few
 | != (Not Equality) |	Compares two numbers, if both are different then returns true. |	[ $a != $b ] would return true. |
 
 > It is very important to understand that all the conditional expressions should be **inside square braces** with spaces around them,
-> for example [ $a == $b ] is correct while [$a==$b] is **incorrect.**
+> for example [ $a == $b ] is correct
+> while [$a==$b] is **incorrect.**
 
 
 ### Relational Operators
@@ -59,9 +60,12 @@ Assume variable a holds 10 and variable b holds 20 then −
 Show Examples
 
 
-|Operator	 | Description | 	Example |
+| Operator	 | Description | 	Example |
+| ------------- | ------------- | ------- |
 | -eq	| Checks if the value of two operands are equal or not; if yes, then the condition becomes true. |	[ $a -eq $b ] is not true.
+
 | -ne	| Checks if the value of two operands are equal or not; if values are not equal, then the condition becomes true.	 | [ $a -ne $b ] is true.
+
 | -gt	| Checks if the value of left operand is greater than the value of right operand; if yes, then the condition becomes true.	 | [ $a -gt $b ] is not true.
 | -lt	| Checks if the value of left operand is less than the value of right operand; if yes, then the condition becomes true. |	[ $a -lt $b ] is true.
 | -ge	| Checks if the value of left operand is greater than or equal to the value of right operand; if yes, then the condition becomes true. |	[ $a -ge $b ] is not true.
