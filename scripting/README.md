@@ -81,9 +81,9 @@ Show Examples
 | Operator |	Description	| Example |
 | ------------- | ------------- | ------- |
 | =	Checks if the value of two operands are equal or not; if yes, then the condition becomes true.	[ $a = $b ] is not true. |
-| !=	Checks if the value of two operands are equal or not; if values are not equal then the condition becomes true.	| [ $a != $b ] is true. |
-| -z	Checks if the given string operand size is zero; if it is zero length, then it returns true. |	[ -z $a ] is not true. |
-| -n	Checks if the given string operand size is non-zero; if it is nonzero length, then it returns true.	 | [ -n $a ] is not false. |
+| != |	Checks if the value of two operands are equal or not; if values are not equal then the condition becomes true.	| [ $a != $b ] is true. |
+| -z |	Checks if the given string operand size is zero; if it is zero length, then it returns true. |	[ -z $a ] is not true. |
+| -n	 | Checks if the given string operand size is non-zero; if it is nonzero length, then it returns true.	 | [ -n $a ] is not false. |
 | str |	Checks if str is not the empty string; if it is empty, then it returns false. | [ $a ] is not false. |
 
 
@@ -101,4 +101,4 @@ The examples below assume a variable file holds an existing file name **"test"**
 | -w file |	Checks if file is writable; if yes, then the condition becomes true.	 | [ -w $file ] is true. |
 | -x file |	Checks if file is executable; if yes, then the condition becomes true. |	[ -x $file ] is true. |
 | -s file |	Checks if file has size greater than 0; if yes, then condition becomes true. |	[ -s $file ] is true. |
-| -e file	Checks if file exists; is true even if file is a directory but exists. |	[ -e $file ] is true. |
+| -e file	| Checks if file exists; is true even if file is a directory but exists. |	[ -e $file ] is true. |
