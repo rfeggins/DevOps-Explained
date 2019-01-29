@@ -12,7 +12,11 @@ the feature has been completed and it's open for discussion or modifications.
 
 <img src="images/git-repo.png" alt="drawing" style="width:200px;"/>
 
+Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.
 
+
+
+https://help.github.com/articles/about-pull-requests
 
 ## Prior to creating a pull request you must:
 1. Rebase your branch to ensure any any new pull requests have been merged so your branch is current
